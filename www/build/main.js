@@ -58,6 +58,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 var TabsPage = (function () {
     function TabsPage() {
+        // Tab pages
         this.tab1Root = __WEBPACK_IMPORTED_MODULE_3__notifications_notifications__["a" /* NotificationsPage */];
         this.tab2Root = __WEBPACK_IMPORTED_MODULE_2__family_family__["a" /* FamilyPage */];
         this.tab3Root = __WEBPACK_IMPORTED_MODULE_1__configuration_configuration__["a" /* ConfigurationPage */];
@@ -65,7 +66,7 @@ var TabsPage = (function () {
     return TabsPage;
 }());
 TabsPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/tabs/tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root" tabTitle="Home" tabIcon="home"></ion-tab>\n  <ion-tab [root]="tab2Root" tabTitle="About" tabIcon="information-circle"></ion-tab>\n  <ion-tab [root]="tab3Root" tabTitle="Contact" tabIcon="contacts"></ion-tab>\n</ion-tabs>\n'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/tabs/tabs.html"*/
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/tabs/tabs.html"*/'<ion-tabs>\n    <ion-tab [root]="tab1Root" tabTitle="Notifications" tabIcon="home"></ion-tab>\n    <ion-tab [root]="tab2Root" tabTitle="Family" tabIcon="information-circle"></ion-tab>\n    <ion-tab [root]="tab3Root" tabTitle="Config" tabIcon="contacts"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/tabs/tabs.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], TabsPage);
@@ -93,8 +94,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var ConfigurationPage = (function () {
-    // this tells the tabs component which Pages
-    // should be each tab's root Page
     function ConfigurationPage(navCtrl) {
         this.navCtrl = navCtrl;
     }
@@ -102,7 +101,7 @@ var ConfigurationPage = (function () {
 }());
 ConfigurationPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-configuration',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/configuration/configuration.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>\n            Configuration\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n<ion-content padding id="page4">\n    <ion-item>\n        <ion-label> Receive notifications</ion-label>\n        <ion-toggle checked="false"></ion-toggle>\n    </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/configuration/configuration.html"*/
+        selector: 'page-configuration',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/configuration/configuration.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Configuration\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <!-- Options -->\n    <ion-item>\n        <ion-label> Receive notifications</ion-label>\n        <ion-toggle checked="false"></ion-toggle>\n    </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/configuration/configuration.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], ConfigurationPage);
@@ -139,7 +138,7 @@ var FamilyPage = (function () {
 }());
 FamilyPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-family',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/family/family.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>\n            Family\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card>\n        <ion-item>\n            <ion-avatar item-start>\n                <img src="./../../assets/img/person.jpg">\n            </ion-avatar>\n            <h2>Name</h2>\n            <p>Last name</p>\n        </ion-item>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/family/family.html"*/
+        selector: 'page-family',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/family/family.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Family\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card>\n        <ion-item>\n            <!-- Image of family member -->\n            <ion-avatar item-start>\n                <img src="http://www.math.uni-frankfurt.de/~person/_4170854.jpg">\n            </ion-avatar>\n            <!-- Name -->\n            <h2>Name</h2>\n            <!-- Last name -->\n            <p>Last name</p>\n        </ion-item>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/family/family.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], FamilyPage);
@@ -168,8 +167,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 // import { HTTP } from '@ionic-native/http';
 var NotificationsPage = (function () {
-    // this tells the tabs component which Pages
-    // should be each tab's root Page
     function NotificationsPage(navCtrl) {
         this.navCtrl = navCtrl;
         /*
@@ -194,11 +191,12 @@ var NotificationsPage = (function () {
 }());
 NotificationsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-notifications',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/notifications/notifications.html"*/'<ion-header>\n    <ion-navbar>\n        <ion-title>\n            Notifications\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card>\n        <ion-card-header>\n            Notification\n            <p>Date</p>\n        </ion-card-header>\n        <ion-card-content>\n            <img src="./../../assets/img/home.jpg" />\n        </ion-card-content>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/notifications/notifications.html"*/
+        selector: 'page-notifications',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/notifications/notifications.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Notifications\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card>\n        <!-- Notification title -->\n        <ion-card-header>\n            Notification\n            <!-- Date -->\n            <p>Date</p>\n        </ion-card-header>\n\n        <ion-card-content>\n            <!-- Photo of the notification -->\n            <img src="./../../assets/img/home.jpg" />\n        </ion-card-content>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/notifications/notifications.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object])
 ], NotificationsPage);
 
+var _a;
 //# sourceMappingURL=notifications.js.map
 
 /***/ }),
@@ -487,7 +485,7 @@ var LoginPage = (function () {
 }());
 LoginPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/login/login.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Login\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page6">\n  <form id="login-form2">\n    <ion-list id="login-list2">\n      <ion-item id="login-input4">\n        <ion-label>\n          Email\n        </ion-label>\n        <ion-input type="email" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="login-input5">\n        <ion-label>\n          Password\n        </ion-label>\n        <ion-input type="password" placeholder=""></ion-input>\n      </ion-item>\n    </ion-list>\n    <div class="spacer" style="height:40px;" id="login-spacer1"></div>\n    <button id="login-button2" ion-button color="stable" block>\n      Log in\n    </button>\n    <button id="login-button3" ion-button clear color="positive" block href-inappbrowser="/signup">\n      Or create an account\n    </button>\n  </form>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/login/login.html"*/
+        selector: 'page-login',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/login/login.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Login\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <form>\n        <ion-list>\n            <!-- Email -->\n            <ion-item>\n                <ion-label>\n                    Email\n                </ion-label>\n                <ion-input type="email" placeholder=""></ion-input>\n            </ion-item>\n\n            <!-- Password -->\n            <ion-item>\n                <ion-label>\n                    Password\n                </ion-label>\n                <ion-input type="password" placeholder=""></ion-input>\n            </ion-item>\n        </ion-list>\n\n        <!-- Blank space -->\n        <div class="spacer" style="height:40px;"></div>\n\n        <!-- Button to submit info -->\n        <button ion-button color="stable" block>\n          Log in\n        </button>\n\n        <!-- Button to create a new account -->\n        <button ion-button clear color="positive" block href-inappbrowser="/signup">\n          Or create an account\n        </button>\n    </form>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/login/login.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], LoginPage);
@@ -524,7 +522,7 @@ var SignupPage = (function () {
 }());
 SignupPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-signup',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/signup/signup.html"*/'<ion-header>\n  <ion-navbar>\n    <ion-title>\n      Signup\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page5">\n  <form id="signup-form1">\n    <ion-list id="signup-list1">\n      <ion-item id="signup-input1">\n        <ion-label>\n          Name\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input6">\n        <ion-label>\n          Last name\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input7">\n        <ion-label>\n          Nickname\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input2">\n        <ion-label>\n          Email\n        </ion-label>\n        <ion-input type="email" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input3">\n        <ion-label>\n          Password\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n      <ion-item id="signup-input8">\n        <ion-label>\n          Confirm password\n        </ion-label>\n        <ion-input type="text" placeholder=""></ion-input>\n      </ion-item>\n    </ion-list>\n    <button id="signup-button1" ion-button color="stable" block>\n      Sign up\n    </button>\n  </form>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/signup/signup.html"*/
+        selector: 'page-signup',template:/*ion-inline-start:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/signup/signup.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Signup\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <form>\n        <ion-list>\n            <!-- Name -->\n            <ion-item>\n                <ion-label>\n                    Name\n                </ion-label>\n                <ion-input type="text" placeholder="John"></ion-input>\n            </ion-item>\n            <!-- Last name -->\n            <ion-item>\n                <ion-label>\n                    Last name\n                </ion-label>\n                <ion-input type="text" placeholder="Smith"></ion-input>\n            </ion-item>\n            <!-- Nickname -->\n            <ion-item>\n                <ion-label>\n                    Nickname\n                </ion-label>\n                <ion-input type="text" placeholder="Johny"></ion-input>\n            </ion-item>\n            <!-- Email -->\n            <ion-item>\n                <ion-label>\n                    Email\n                </ion-label>\n                <ion-input type="email" placeholder="user@mail.com"></ion-input>\n            </ion-item>\n            <!-- Password -->\n            <ion-item>\n                <ion-label>\n                    Password\n                </ion-label>\n                <ion-input type="password" placeholder="password"></ion-input>\n            </ion-item>\n            <!-- Confirm password -->\n            <ion-item>\n                <ion-label>\n                    Confirm password\n                </ion-label>\n                <ion-input type="password" placeholder="password"></ion-input>\n            </ion-item>\n        </ion-list>\n\n        <!-- Button to submit the info -->\n        <button ion-button color="stable" block>\n      Sign up\n    </button>\n    </form>\n</ion-content>'/*ion-inline-end:"/Users/juanhernandez/Desktop/Project-My-Safe-Home/src/pages/signup/signup.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], SignupPage);

@@ -6,9 +6,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  // this tells the tabs component which Pages
-  // should be each tab's root Page
-  constructor(public navCtrl: NavController) {
-  }
-  
+
+  constructor(public navCtrl: NavController) { }
+
 }

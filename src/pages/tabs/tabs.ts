@@ -9,11 +9,11 @@ import { NotificationsPage } from '../notifications/notifications';
 })
 export class TabsPage {
 
+  // Tab pages
   tab1Root = NotificationsPage;
   tab2Root = FamilyPage;
   tab3Root = ConfigurationPage;
 
-  constructor() {
+  constructor() { }
 
-  }
 }
