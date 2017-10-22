@@ -1,21 +1,23 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-// import { HTTP } from '@ionic-native/http';
+import { HTTP } from '@ionic-native/http';
 
 @Component({
   selector: 'page-notifications',
   templateUrl: 'notifications.html'
 })
 export class NotificationsPage {
+  public data: any;
 
-  constructor(public navCtrl: NavController) {
-    /*
+  constructor(public navCtrl: NavController, public http: HTTP) {
     this.http.get('https://jsonplaceholder.typicode.com/posts/', {}, {})
     .then(data => {
   
       console.log(data.status);
       console.log(data.data); // data received by server
       console.log(data.headers);
+
+      this.data = data;
   
     })
     .catch(error => {
@@ -25,7 +27,6 @@ export class NotificationsPage {
       console.log(error.headers);
   
     });
-    */
   }
   
 }

@@ -13,6 +13,9 @@ import { SignupPage } from '../pages/signup/signup';
 // Tabs
 import { TabsPage } from '../pages/tabs/tabs';
 
+// Plugins
+import { HTTP } from '@ionic-native/http';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -43,6 +46,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
+    HTTP,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
