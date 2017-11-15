@@ -1,32 +1,29 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HTTP } from '@ionic-native/http';
+import { HttpService } from '../../services/http.service';
 
 @Component({
   selector: 'page-notifications',
   templateUrl: 'notifications.html'
 })
 export class NotificationsPage {
-  public data: any;
+  public list: any;
 
-  constructor(public navCtrl: NavController, public http: HTTP) {
-    this.http.get('https://jsonplaceholder.typicode.com/posts/', {}, {})
-    .then(data => {
-  
-      console.log(data.status);
-      console.log(data.data); // data received by server
-      console.log(data.headers);
+  constructor(
+    public navCtrl: NavController,
+    public httpService: HttpService
+  ) {
+    this.getList();
+  }
 
-      this.data = data;
-  
+  getList() {
+    this.httpService.get('https://jsonplaceholder.typicode.com/posts/').subscribe(dataReceived => {
+      if (dataReceived) {
+        this.list = dataReceived;
+      } else {
+        console.log('error');
+      }
     })
-    .catch(error => {
-  
-      console.log(error.status);
-      console.log(error.error); // error message as string
-      console.log(error.headers);
-  
-    });
   }
   
 }
