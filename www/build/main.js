@@ -101,7 +101,7 @@ var ConfigurationPage = (function () {
 }());
 ConfigurationPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-configuration',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/configuration/configuration.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Configuration\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <!-- Options -->\n    <ion-item>\n        <ion-label> Receive notifications</ion-label>\n        <ion-toggle checked="false"></ion-toggle>\n    </ion-item>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/configuration/configuration.html"*/
+        selector: 'page-configuration',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/configuration/configuration.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Configuration\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card color="dark">\n        <!-- Options -->\n        <ion-item color="dark">\n            <ion-label> Receive notifications</ion-label>\n            <ion-toggle checked="false"></ion-toggle>\n        </ion-item>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/configuration/configuration.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], ConfigurationPage);
@@ -136,7 +136,7 @@ var FamilyPage = (function () {
 }());
 FamilyPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-family',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/family/family.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Family\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card>\n        <ion-item>\n            <!-- Image of family member -->\n            <ion-avatar item-start>\n                <img src="http://www.math.uni-frankfurt.de/~person/_4170854.jpg">\n            </ion-avatar>\n            <!-- Name -->\n            <h2>Name</h2>\n            <!-- Last name -->\n            <p>Last name</p>\n        </ion-item>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/family/family.html"*/
+        selector: 'page-family',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/family/family.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Family\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card color="dark">\n        <ion-item color="dark">\n            <!-- Image of family member -->\n            <ion-avatar item-start>\n                <img src="http://www.math.uni-frankfurt.de/~person/_4170854.jpg">\n            </ion-avatar>\n            <!-- Name -->\n            <h2>Name</h2>\n            <!-- Last name -->\n            <p>Last name</p>\n        </ion-item>\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/family/family.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
 ], FamilyPage);
