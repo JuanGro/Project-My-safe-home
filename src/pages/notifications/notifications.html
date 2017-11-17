@@ -8,17 +8,17 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card>
+    <ion-card *ngFor="let item of items">
         <!-- Notification title -->
         <ion-card-header>
-            Notification {{ list }}
+            {{ item.type }}
             <!-- Date -->
-            <p>Date</p>
+            <p>{{ item.date }}</p>
         </ion-card-header>
 
         <ion-card-content>
             <!-- Photo of the notification -->
-            <img src="http://www1.uwindsor.ca/canterbury/sites/uwindsor.ca.canterbury/files/Anslem_Living_Room.jpeg" />
+            <img src="{{ item.image }}" />
         </ion-card-content>
     </ion-card>
 </ion-content>
