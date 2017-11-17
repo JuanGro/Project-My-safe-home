@@ -20,12 +20,11 @@ export class NotificationsPage {
   }
 
   getList() {
-    this.httpService.get('http://127.0.0.1:5000/items').subscribe(dataReceived => {
+    this.httpService.get('http://104.236.109.213/items').subscribe(dataReceived => {
       if (dataReceived) {
         this.items = dataReceived;
-        console.log(this.items);
       } else {
-        console.log('error');
+        // console.log('error');
       }
     })
   }

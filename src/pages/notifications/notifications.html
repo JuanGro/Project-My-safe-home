@@ -8,12 +8,17 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card *ngFor="let item of items">
+    <ion-card *ngFor="let item of items" color="dark">
         <!-- Notification title -->
         <ion-card-header>
-            {{ item.type }}
+            <ion-item color="danger">
+                <ion-icon name="flame" item-start></ion-icon>
+                    {{ item.type }}
+            </ion-item>
             <!-- Date -->
-            <p>{{ item.date }}</p>
+            <ion-item>
+                {{ item.date | date:'medium' }}
+            </ion-item>
         </ion-card-header>
 
         <ion-card-content>
