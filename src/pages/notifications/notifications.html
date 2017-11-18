@@ -10,34 +10,29 @@
 <ion-content padding>
     <ion-card *ngFor="let item of items" color="dark">
         <!-- Notification title -->
-        <ion-card-header>
-            <ion-item color="danger" *ngIf="item.type == 'Fire'">
-                <ion-icon name="flame" item-start></ion-icon>
-                    {{ item.type }}
-            </ion-item>
-            <ion-item color="primary" *ngIf="item.type == 'Flood'">
-                <ion-icon name="water" item-start></ion-icon>
-                    {{ item.type }}
-            </ion-item>
-            <ion-item color="warning" *ngIf="item.type == 'Gas'">
-                <ion-icon name="warning" item-start></ion-icon>
-                    {{ item.type }}
-            </ion-item>
-            <ion-item color="pulse" *ngIf="item.type == 'Earthquake'">
-                <ion-icon name="pulse" item-start></ion-icon>
-                    {{ item.type }}
-            </ion-item>
-            <ion-item color="secondary" *ngIf="item.type == 'Movement'">
-                <ion-icon name="walk" item-start></ion-icon>
-                    {{ item.type }}
-            </ion-item>
-            <!-- Date -->
-            <ion-item>{{ item.date | date:'medium' }}</ion-item>
-        </ion-card-header>
-
-        <ion-card-content>
-            <!-- Photo of the notification -->
-            <img src="{{ item.image }}" />
-        </ion-card-content>
+        <ion-item color="danger" *ngIf="item.type == 'Fire'">
+            <ion-icon name="flame" item-start></ion-icon>
+                {{ item.type }}
+        </ion-item>
+        <ion-item color="primary" *ngIf="item.type == 'Flood'">
+            <ion-icon name="water" item-start></ion-icon>
+                {{ item.type }}
+        </ion-item>
+        <ion-item color="warning" *ngIf="item.type == 'Gas'">
+            <ion-icon name="warning" item-start></ion-icon>
+                {{ item.type }}
+        </ion-item>
+        <ion-item color="pulse" *ngIf="item.type == 'Earthquake'">
+            <ion-icon name="pulse" item-start></ion-icon>
+                {{ item.type }}
+        </ion-item>
+        <ion-item color="secondary" *ngIf="item.type == 'Movement'">
+            <ion-icon name="walk" item-start></ion-icon>
+                {{ item.type }}
+        </ion-item>
+        <!-- Date -->
+        <ion-item>{{ item.date }}</ion-item>
+        <!-- Photo of the notification -->
+        <img src="{{ item.image }}" />
     </ion-card>
 </ion-content>
