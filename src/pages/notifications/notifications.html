@@ -31,7 +31,7 @@
                 {{ item.type }}
         </ion-item>
         <!-- Date -->
-        <ion-item>{{ item.date }}</ion-item>
+        <ion-item>{{ item.date | date:'medium' }}</ion-item>
         <!-- Photo of the notification -->
         <img src="{{ item.image }}" />
     </ion-card>

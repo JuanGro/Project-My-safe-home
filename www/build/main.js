@@ -195,7 +195,7 @@ var NotificationsPage = (function () {
 }());
 NotificationsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-notifications',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/notifications/notifications.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Notifications\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card *ngFor="let item of items" color="dark">\n        <!-- Notification title -->\n        <ion-item color="danger" *ngIf="item.type == \'Fire\'">\n            <ion-icon name="flame" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="primary" *ngIf="item.type == \'Flood\'">\n            <ion-icon name="water" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="warning" *ngIf="item.type == \'Gas\'">\n            <ion-icon name="warning" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="pulse" *ngIf="item.type == \'Earthquake\'">\n            <ion-icon name="pulse" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="secondary" *ngIf="item.type == \'Movement\'">\n            <ion-icon name="walk" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <!-- Date -->\n        <ion-item>{{ item.date }}</ion-item>\n        <!-- Photo of the notification -->\n        <img src="{{ item.image }}" />\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/notifications/notifications.html"*/
+        selector: 'page-notifications',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/notifications/notifications.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Notifications\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card *ngFor="let item of items" color="dark">\n        <!-- Notification title -->\n        <ion-item color="danger" *ngIf="item.type == \'Fire\'">\n            <ion-icon name="flame" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="primary" *ngIf="item.type == \'Flood\'">\n            <ion-icon name="water" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="warning" *ngIf="item.type == \'Gas\'">\n            <ion-icon name="warning" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="pulse" *ngIf="item.type == \'Earthquake\'">\n            <ion-icon name="pulse" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="secondary" *ngIf="item.type == \'Movement\'">\n            <ion-icon name="walk" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <!-- Date -->\n        <ion-item>{{ item.date | date:\'medium\' }}</ion-item>\n        <!-- Photo of the notification -->\n        <img src="{{ item.image }}" />\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/notifications/notifications.html"*/
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_http_service__["a" /* HttpService */]) === "function" && _b || Object])
 ], NotificationsPage);
@@ -478,11 +478,38 @@ var Item = (function () {
         if (json) {
             this.id = json.id;
             this.type = json.type;
-            this.date = json.date;
+            this.date = this.tryParseDateFromString(json.date);
             this.location = json.location;
             this.image = json.image;
         }
     }
+    // multiple formats (e.g. yyyy/mm/dd or mm-dd-yyyy etc.)
+    Item.prototype.tryParseDateFromString = function (dateStringCandidateValue, format) {
+        if (format === void 0) { format = "ymd"; }
+        if (!dateStringCandidateValue) {
+            return null;
+        }
+        var mapFormat = format
+            .split("")
+            .reduce(function (a, b, i) { a[b] = i; return a; }, {});
+        var dateStr2Array = dateStringCandidateValue.split(/[ :\-\/]/g);
+        var datePart = dateStr2Array.slice(0, 3);
+        var datePartFormatted = [
+            +datePart[mapFormat.y],
+            +datePart[mapFormat.m] - 1,
+            +datePart[mapFormat.d]
+        ];
+        if (dateStr2Array.length > 3) {
+            dateStr2Array.slice(3).forEach(function (t) { return datePartFormatted.push(+t); });
+        }
+        // test date validity according to given [format]
+        var dateTrial = new Date(Date.UTC.apply(null, datePartFormatted));
+        return dateTrial && dateTrial.getFullYear() === datePartFormatted[0] &&
+            dateTrial.getMonth() === datePartFormatted[1] &&
+            dateTrial.getDate() === datePartFormatted[2]
+            ? dateTrial :
+            null;
+    };
     return Item;
 }());
 
