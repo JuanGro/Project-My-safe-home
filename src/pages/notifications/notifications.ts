@@ -15,14 +15,19 @@ export class NotificationsPage {
   constructor(
     public navCtrl: NavController,
     public httpService: HttpService
-  ) {
+  ) {}
+
+  ionViewDidLoad() {
+    this.items = [];
     this.getList();
   }
 
   getList() {
     this.httpService.get('http://104.236.109.213/items').subscribe(dataReceived => {
       if (dataReceived) {
-        this.items = dataReceived;
+        for (let item of dataReceived) {
+          this.items.push(new Item(item));
+        }
       } else {
         // console.log('error');
       }

@@ -153,6 +153,7 @@ FamilyPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_http_service__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_item_model__ = __webpack_require__(575);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -165,17 +166,25 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// Models
+
 var NotificationsPage = (function () {
     function NotificationsPage(navCtrl, httpService) {
         this.navCtrl = navCtrl;
         this.httpService = httpService;
-        this.getList();
     }
+    NotificationsPage.prototype.ionViewDidLoad = function () {
+        this.items = [];
+        this.getList();
+    };
     NotificationsPage.prototype.getList = function () {
         var _this = this;
         this.httpService.get('http://104.236.109.213/items').subscribe(function (dataReceived) {
             if (dataReceived) {
-                _this.items = dataReceived;
+                for (var _i = 0, dataReceived_1 = dataReceived; _i < dataReceived_1.length; _i++) {
+                    var item = dataReceived_1[_i];
+                    _this.items.push(new __WEBPACK_IMPORTED_MODULE_3__models_item_model__["a" /* Item */](item));
+                }
             }
             else {
                 // console.log('error');
@@ -188,10 +197,10 @@ NotificationsPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
         selector: 'page-notifications',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/notifications/notifications.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Notifications\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <ion-card *ngFor="let item of items" color="dark">\n        <!-- Notification title -->\n        <ion-item color="danger" *ngIf="item.type == \'Fire\'">\n            <ion-icon name="flame" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="primary" *ngIf="item.type == \'Flood\'">\n            <ion-icon name="water" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="warning" *ngIf="item.type == \'Gas\'">\n            <ion-icon name="warning" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="pulse" *ngIf="item.type == \'Earthquake\'">\n            <ion-icon name="pulse" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <ion-item color="secondary" *ngIf="item.type == \'Movement\'">\n            <ion-icon name="walk" item-start></ion-icon>\n                {{ item.type }}\n        </ion-item>\n        <!-- Date -->\n        <ion-item>{{ item.date }}</ion-item>\n        <!-- Photo of the notification -->\n        <img src="{{ item.image }}" />\n    </ion-card>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/notifications/notifications.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */],
-        __WEBPACK_IMPORTED_MODULE_2__services_http_service__["a" /* HttpService */]])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_http_service__["a" /* HttpService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_http_service__["a" /* HttpService */]) === "function" && _b || Object])
 ], NotificationsPage);
 
+var _a, _b;
 //# sourceMappingURL=notifications.js.map
 
 /***/ }),
@@ -456,6 +465,28 @@ SignupPage = __decorate([
 ], SignupPage);
 
 //# sourceMappingURL=signup.js.map
+
+/***/ }),
+
+/***/ 575:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Item; });
+var Item = (function () {
+    function Item(json) {
+        if (json) {
+            this.id = json.id;
+            this.type = json.type;
+            this.date = json.date;
+            this.location = json.location;
+            this.image = json.image;
+        }
+    }
+    return Item;
+}());
+
+//# sourceMappingURL=item.model.js.map
 
 /***/ })
 
