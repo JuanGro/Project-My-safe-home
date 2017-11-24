@@ -18,7 +18,7 @@ export class Item {
     // multiple formats (e.g. yyyy/mm/dd or mm-dd-yyyy etc.)
     tryParseDateFromString(dateStringCandidateValue, format = "ymd") {
         if (!dateStringCandidateValue) { return null; }
-        let mapFormat = format
+        let mapFormat: any = format
                 .split("")
                 .reduce(function (a, b, i) { a[b] = i; return a;}, {});
         const dateStr2Array = dateStringCandidateValue.split(/[ :\-\/]/g);
