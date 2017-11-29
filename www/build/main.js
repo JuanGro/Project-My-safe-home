@@ -153,7 +153,7 @@ FamilyPage = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_http_service__ = __webpack_require__(231);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_item_model__ = __webpack_require__(575);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__models_item_model__ = __webpack_require__(573);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -175,7 +175,8 @@ var NotificationsPage = (function () {
     }
     NotificationsPage.prototype.ionViewDidLoad = function () {
         this.items = [];
-        this.getList();
+        while (true)
+            this.getList();
     };
     NotificationsPage.prototype.getList = function () {
         var _this = this;
@@ -274,9 +275,9 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_http__ = __webpack_require__(232);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_configuration_configuration__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_family_family__ = __webpack_require__(229);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(573);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_login_login__ = __webpack_require__(574);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_notifications_notifications__ = __webpack_require__(230);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__ = __webpack_require__(574);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_signup_signup__ = __webpack_require__(575);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_tabs_tabs__ = __webpack_require__(227);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__services_http_service__ = __webpack_require__(231);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__ionic_native_status_bar__ = __webpack_require__(221);
@@ -400,78 +401,6 @@ MyApp = __decorate([
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var LoginPage = (function () {
-    function LoginPage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    return LoginPage;
-}());
-LoginPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-login',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/login/login.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Login\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <form>\n        <ion-list>\n            <!-- Email -->\n            <ion-item>\n                <ion-label>\n                    Email\n                </ion-label>\n                <ion-input type="email" placeholder=""></ion-input>\n            </ion-item>\n\n            <!-- Password -->\n            <ion-item>\n                <ion-label>\n                    Password\n                </ion-label>\n                <ion-input type="password" placeholder=""></ion-input>\n            </ion-item>\n        </ion-list>\n\n        <!-- Blank space -->\n        <div class="spacer" style="height:40px;"></div>\n\n        <!-- Button to submit info -->\n        <button ion-button color="stable" block>\n          Log in\n        </button>\n\n        <!-- Button to create a new account -->\n        <button ion-button clear color="positive" block href-inappbrowser="/signup">\n          Or create an account\n        </button>\n    </form>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/login/login.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
-], LoginPage);
-
-//# sourceMappingURL=login.js.map
-
-/***/ }),
-
-/***/ 574:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var SignupPage = (function () {
-    // this tells the tabs component which Pages
-    // should be each tab's root Page
-    function SignupPage(navCtrl) {
-        this.navCtrl = navCtrl;
-    }
-    return SignupPage;
-}());
-SignupPage = __decorate([
-    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-signup',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/signup/signup.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Signup\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <form>\n        <ion-list>\n            <!-- Name -->\n            <ion-item>\n                <ion-label>\n                    Name\n                </ion-label>\n                <ion-input type="text" placeholder="John"></ion-input>\n            </ion-item>\n            <!-- Last name -->\n            <ion-item>\n                <ion-label>\n                    Last name\n                </ion-label>\n                <ion-input type="text" placeholder="Smith"></ion-input>\n            </ion-item>\n            <!-- Nickname -->\n            <ion-item>\n                <ion-label>\n                    Nickname\n                </ion-label>\n                <ion-input type="text" placeholder="Johny"></ion-input>\n            </ion-item>\n            <!-- Email -->\n            <ion-item>\n                <ion-label>\n                    Email\n                </ion-label>\n                <ion-input type="email" placeholder="user@mail.com"></ion-input>\n            </ion-item>\n            <!-- Password -->\n            <ion-item>\n                <ion-label>\n                    Password\n                </ion-label>\n                <ion-input type="password" placeholder="password"></ion-input>\n            </ion-item>\n            <!-- Confirm password -->\n            <ion-item>\n                <ion-label>\n                    Confirm password\n                </ion-label>\n                <ion-input type="password" placeholder="password"></ion-input>\n            </ion-item>\n        </ion-list>\n\n        <!-- Button to submit the info -->\n        <button ion-button color="stable" block>\n      Sign up\n    </button>\n    </form>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/signup/signup.html"*/
-    }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
-], SignupPage);
-
-//# sourceMappingURL=signup.js.map
-
-/***/ }),
-
-/***/ 575:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Item; });
 var Item = (function () {
     function Item(json) {
@@ -514,6 +443,78 @@ var Item = (function () {
 }());
 
 //# sourceMappingURL=item.model.js.map
+
+/***/ }),
+
+/***/ 574:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var LoginPage = (function () {
+    function LoginPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    return LoginPage;
+}());
+LoginPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-login',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/login/login.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Login\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <form>\n        <ion-list>\n            <!-- Email -->\n            <ion-item>\n                <ion-label>\n                    Email\n                </ion-label>\n                <ion-input type="email" placeholder=""></ion-input>\n            </ion-item>\n\n            <!-- Password -->\n            <ion-item>\n                <ion-label>\n                    Password\n                </ion-label>\n                <ion-input type="password" placeholder=""></ion-input>\n            </ion-item>\n        </ion-list>\n\n        <!-- Blank space -->\n        <div class="spacer" style="height:40px;"></div>\n\n        <!-- Button to submit info -->\n        <button ion-button color="stable" block>\n          Log in\n        </button>\n\n        <!-- Button to create a new account -->\n        <button ion-button clear color="positive" block href-inappbrowser="/signup">\n          Or create an account\n        </button>\n    </form>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/login/login.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+], LoginPage);
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 575:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SignupPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(40);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var SignupPage = (function () {
+    // this tells the tabs component which Pages
+    // should be each tab's root Page
+    function SignupPage(navCtrl) {
+        this.navCtrl = navCtrl;
+    }
+    return SignupPage;
+}());
+SignupPage = __decorate([
+    Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
+        selector: 'page-signup',template:/*ion-inline-start:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/signup/signup.html"*/'<ion-header>\n    <ion-navbar>\n        <!-- Title for page -->\n        <ion-title>\n            Signup\n        </ion-title>\n    </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n    <form>\n        <ion-list>\n            <!-- Name -->\n            <ion-item>\n                <ion-label>\n                    Name\n                </ion-label>\n                <ion-input type="text" placeholder="John"></ion-input>\n            </ion-item>\n            <!-- Last name -->\n            <ion-item>\n                <ion-label>\n                    Last name\n                </ion-label>\n                <ion-input type="text" placeholder="Smith"></ion-input>\n            </ion-item>\n            <!-- Nickname -->\n            <ion-item>\n                <ion-label>\n                    Nickname\n                </ion-label>\n                <ion-input type="text" placeholder="Johny"></ion-input>\n            </ion-item>\n            <!-- Email -->\n            <ion-item>\n                <ion-label>\n                    Email\n                </ion-label>\n                <ion-input type="email" placeholder="user@mail.com"></ion-input>\n            </ion-item>\n            <!-- Password -->\n            <ion-item>\n                <ion-label>\n                    Password\n                </ion-label>\n                <ion-input type="password" placeholder="password"></ion-input>\n            </ion-item>\n            <!-- Confirm password -->\n            <ion-item>\n                <ion-label>\n                    Confirm password\n                </ion-label>\n                <ion-input type="password" placeholder="password"></ion-input>\n            </ion-item>\n        </ion-list>\n\n        <!-- Button to submit the info -->\n        <button ion-button color="stable" block>\n      Sign up\n    </button>\n    </form>\n</ion-content>'/*ion-inline-end:"/Users/JuanG/Desktop/mySafeHomeApp/src/pages/signup/signup.html"*/
+    }),
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* NavController */]])
+], SignupPage);
+
+//# sourceMappingURL=signup.js.map
 
 /***/ })
 
